@@ -25,6 +25,12 @@ plain (no client photo). `js/vendor/` holds three r128 + OrbitControls + RoomEnv
 it after page load into the hero viewfinder: slow auto-rotate, drag on desktop, never captures touch on phones, still
 with reduced motion, falls back to the gradient without WebGL. Never bring back other brands' text or client images.
 
+## Renders
+`assets/renders/ef001-*.jpg` (1600×2000) and `ef001-og.jpg` (1200×630 social) come from `tools/render.html?shot=<name>`,
+which stages the live model on the studio backdrop: front/left/back three-quarter, curtain-closed, low-angle,
+sign-detail, wrap-study (a Tally Red wrap, no client art). Capture `#stage` at deviceScaleFactor 1.6 with WebGL on.
+Always caption them "Render" on the site until real photos of the build replace them.
+
 ## Content rules
 - Real footage and real projects only. Placeholder slots are labelled as such until replaced. No stock imagery.
 - Booth entries say their true status: Built / In development / Lab.

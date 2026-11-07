@@ -86,6 +86,24 @@ h2 em { color: var(--tally); }
 .index .d { color: #B9B6B0; } .index .s { color: var(--alu); text-align: right; }
 @media (max-width: 720px) { .index li { grid-template-columns: 48px 1fr; } .index .d { grid-column: 2; } .index .s { grid-column: 2; text-align: left; } }
 
+/* EF—001 feature: renders in an editorial grid (1 large + 4) */
+.feature { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr); gap: 14px; align-items: start; margin-top: clamp(48px, 7vw, 96px); }
+.feature-head { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 2fr); gap: 16px 32px; align-items: baseline; margin-bottom: 18px; }
+.feature-head .mono { color: var(--alu); } .feature-head .n { color: var(--tally); }
+.feature-head h3 { font: 800 clamp(30px, 3.6vw, 56px)/1 var(--sans); font-stretch: 115%; letter-spacing: -.02em; }
+.feature-head p:last-child { color: #B9B6B0; max-width: 56ch; }
+.fe { position: relative; overflow: hidden; background: var(--ink-2); }
+.fe img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 5; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+.fe:hover img { transform: scale(1.035); }
+.fe figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 28px 12px 10px; color: var(--paper); font-size: 10px;
+  background: linear-gradient(transparent, rgba(11,11,12,.85)); }   /* readable over bright renders */
+.fe-main { grid-row: span 2; }
+.fe-main img { aspect-ratio: 4 / 5; }   /* 2× column width = two small rows: every render keeps its full frame */
+@media (max-width: 860px) {
+  .feature { grid-template-columns: repeat(2, minmax(0, 1fr)); } .feature-head { grid-template-columns: 1fr; }
+  .fe-main { grid-column: 1 / -1; grid-row: auto; } .fe-main img { aspect-ratio: 4 / 5; }
+}
+
 /* capabilities */
 .caps .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); }
 .caps article { padding: 28px 24px 8px 0; border-right: 1px solid var(--line); margin-right: 24px; }

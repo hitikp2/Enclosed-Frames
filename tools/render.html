@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>EF—001 render stage</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,800&display=swap" rel="stylesheet">
+<!-- Studio stills of EF—001 The Enclosed, from the live model. Open /tools/render.html?shot=<name> and capture #stage
+     (e.g. Playwright, deviceScaleFactor 1.6 → 1600×2000). Shots are defined below; add new ones the same way. -->
+<style>
+  html, body { margin: 0; background: #0B0B0C; }
+  #stage { width: 1000px; height: 1250px; position: relative;
+    background: radial-gradient(70% 55% at 50% 42%, #2a2a2e 0%, #161618 55%, #0B0B0C 100%); }
+  #stage::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 30%;
+    background: linear-gradient(transparent, rgba(0,0,0,.35)); pointer-events: none; }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script src="../js/vendor/three.min.js"></script>
+<script src="../js/vendor/OrbitControls.js"></script>
+<script src="../js/vendor/RoomEnvironment.js"></script>
+<script src="../js/booth.js"></script>
+<script>
+  // Booth centre and orbit helper (metres; front face at z = 0).
+  var C = [0.76, 0.9, -0.38];
+  function orbit(deg, r, y) { var a = deg * Math.PI / 180; return [C[0] + Math.sin(a) * r, y, C[2] + Math.cos(a) * r]; }
+  // A wrap study in the studio's colours (no client art).
+  function wrapStudy(size) {
+    var ppi = 16, c = document.createElement('canvas'); c.width = size.width * ppi; c.height = Math.round(size.height * ppi);
+    var g = c.getContext('2d'), w = c.width, h = c.height;
+    g.fillStyle = '#FF3B1F'; g.fillRect(0, 0, w, h);                       // Tally Red all over
+    g.fillStyle = '#0B0B0C'; g.fillRect(0, h * .78, w, h * .045);           // one ink band at bench height
+    g.textAlign = 'center'; g.font = '800 ' + ppi * 4.6 + 'px Archivo, Arial, sans-serif';
+    g.fillText('WRAP', 75 * ppi, .40 * h); g.fillText('STUDY 01', 75 * ppi, .40 * h + ppi * 5);
+    return c;
+  }
+  var SHOTS = {
+    'front-three-quarter': { cam: orbit(38, 6.2, 1.35), look: [C[0], 0.95, C[2]], fov: 30 },
+    'left-three-quarter':  { cam: orbit(-38, 6.2, 1.35), look: [C[0], 0.95, C[2]], fov: 30 },
+    'curtain-closed':      { cam: orbit(12, 6.0, 1.25), look: [C[0], 0.95, C[2]], fov: 30, curtain: 1 },
+    'low-angle':           { cam: orbit(28, 5.4, 0.35), look: [C[0], 1.05, C[2]], fov: 32 },
+    'sign-detail':         { cam: [0.78, 1.52, 2.45], look: [0.22, 1.43, 0], fov: 30 },
+    'back-three-quarter':  { cam: orbit(150, 6.2, 1.45), look: [C[0], 0.95, C[2]], fov: 30 },
+    'wrap-study':          { cam: orbit(48, 6.3, 1.4), look: [C[0], 0.95, C[2]], fov: 30, wrap: true },
+  };
+  var name = new URLSearchParams(location.search).get('shot') || 'front-three-quarter', s = SHOTS[name];
+  (document.fonts ? document.fonts.load('800 96px Archivo') : Promise.resolve()).then(function () { return createBooth(document.getElementById('stage')); }).then(function (b) {
+    b.controls.enabled = false;
+    if (s.curtain != null && b.setCurtains) b.setCurtains(s.curtain);
+    if (s.wrap) b.applyWrap(wrapStudy(b.wrapSize));
+    b.camera.fov = s.fov; b.camera.updateProjectionMatrix();
+    b.camera.position.set(s.cam[0], s.cam[1], s.cam[2]); b.controls.target.set(s.look[0], s.look[1], s.look[2]); b.controls.update();
+    setTimeout(function () { document.body.dataset.ready = '1'; }, 1200);
+  });
+</script>
+</body>
+</html>
