@@ -21,7 +21,7 @@
   <header class="top">
     <a class="mark" href="#top" aria-label="Enclosed Frames home"><span class="br">⌜</span>Enclosed Frames<span class="br">⌟</span></a>
     <nav aria-label="Primary">
-      <a href="#booths">Booths</a><a href="#lab">Lab</a><a href="#process">Process</a>
+      <a href="#booths">Booths</a><a href="#lab">Lab</a><a href="#process">Process</a><a href="#journey">How we work</a>
       <a class="cta" href="#brief">Start a project</a>
     </nav>
   </header>
@@ -126,9 +126,76 @@
       </ol>
     </section>
 
-    <!-- 07 · BRIEF — a call sheet -->
+    <!-- 07 · WORKING WITH US — a swimlane: steps run left to right, each team keeps its own lane.
+         Desktop: grid (steps = columns, lanes = rows). Under 1000px: a vertical timeline, each entry tagged with its team. -->
+    <section class="journey reveal" id="journey">
+      <div class="sec-head"><p class="idx mono">07 / Working with us</p><h2>Two teams, one <em>thread.</em></h2><p class="sub">One point of contact for strategy. One team obsessed with the build.</p></div>
+      <div class="lanes">
+        <p class="lane-label lane-you mono" aria-hidden="true"><b>You</b>The client</p>
+        <p class="lane-label lane-bm mono" aria-hidden="true"><b>Brand Management</b>Strategy &amp; client lead</p>
+        <p class="lane-label lane-cf mono" aria-hidden="true"><b>Creative Fulfillment</b>Design, build &amp; production</p>
+        <span class="lane-bg lane-you" aria-hidden="true"></span><span class="lane-bg lane-bm" aria-hidden="true"></span><span class="lane-bg lane-cf" aria-hidden="true"></span>
+        <ol class="steps">
+          <li style="--s:2"><span class="col" aria-hidden="true"></span>
+            <h3 class="st"><span class="mono">01</span>Inquiry</h3>
+            <p class="cell you"><span class="who mono">You</span>You send the brief.</p>
+            <p class="cell bm"><span class="who mono">Brand Management</span>Reads it and sets up your strategy session.</p>
+          </li>
+          <li style="--s:3"><span class="col" aria-hidden="true"></span>
+            <h3 class="st"><span class="mono">02</span>Strategy session</h3>
+            <p class="cell you"><span class="who mono">You</span>Bring the vision and the goals.</p>
+            <p class="cell bm lead"><span class="who mono">Brand Management</span>Vision, goals, audience and what success looks like.</p>
+          </li>
+          <li style="--s:4"><span class="col" aria-hidden="true"></span>
+            <h3 class="st"><span class="mono">03</span>Brief &amp; handoff</h3>
+            <p class="cell bm lead"><span class="who mono">Brand Management</span>Writes the creative brief and hands it down.</p>
+            <p class="cell cf handoff"><span class="who mono">Creative Fulfillment</span>Takes the brief and starts the work.</p>
+          </li>
+          <li style="--s:5"><span class="col" aria-hidden="true"></span>
+            <h3 class="st"><span class="mono">04</span>Design &amp; build</h3>
+            <p class="cell bm"><span class="who mono">Brand Management</span>Tracks progress and keeps you in the loop.</p>
+            <p class="cell cf lead"><span class="who mono">Creative Fulfillment</span>Concept, design, interface, fabrication and testing.</p>
+          </li>
+          <li style="--s:6"><span class="col" aria-hidden="true"></span>
+            <h3 class="st"><span class="mono">05</span>Reviews</h3>
+            <p class="cell you review"><span class="who mono">You</span><span class="flag mono">Client review</span>See the progress, give your notes.</p>
+            <p class="cell bm lead"><span class="who mono">Brand Management</span>Walks you through each checkpoint and takes feedback back to the team.</p>
+            <p class="cell cf"><span class="who mono">Creative Fulfillment</span>Refines the build from your notes.</p>
+          </li>
+          <li style="--s:7"><span class="col" aria-hidden="true"></span>
+            <h3 class="st"><span class="mono">06</span>Event</h3>
+            <p class="cell you"><span class="who mono">You</span>Your guests step inside.</p>
+            <p class="cell bm"><span class="who mono">Brand Management</span>On hand as your point of contact.</p>
+            <p class="cell cf lead"><span class="who mono">Creative Fulfillment</span>Delivers, staffs and runs the booth on site.</p>
+          </li>
+          <li style="--s:8"><span class="col" aria-hidden="true"></span>
+            <h3 class="st"><span class="mono">07</span>Wrap</h3>
+            <p class="cell you review"><span class="who mono">You</span><span class="flag mono">Client review</span>Go over the results.</p>
+            <p class="cell bm lead"><span class="who mono">Brand Management</span>Reviews the results with you.</p>
+            <p class="cell cf"><span class="who mono">Creative Fulfillment</span>Edits and delivers every frame.</p>
+          </li>
+        </ol>
+      </div>
+      <p class="legend mono"><span><i class="k k-lead"></i>Leads the step</span><span><i class="k k-review"></i>Client review checkpoint</span></p>
+      <div class="teams">
+        <article class="team">
+          <p class="mono">Team A · Your point of contact</p>
+          <h3>Brand Management</h3>
+          <p>The people you talk to from the first call to the wrap. They own the strategy, write the brief, track the build and run every review with you.</p>
+          <ul class="mono"><li>Strategy session</li><li>Creative brief</li><li>Progress tracking</li><li>Client reviews</li><li>Results review</li></ul>
+        </article>
+        <article class="team">
+          <p class="mono">Team B · The build</p>
+          <h3>Creative Fulfillment</h3>
+          <p>Designers, fabricators and crew. They turn the brief into a working booth, test it in our Los Angeles shop and run it on the day.</p>
+          <ul class="mono"><li>Design &amp; interface</li><li>Fabrication &amp; testing</li><li>On-site production</li><li>Content delivery</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- 08 · BRIEF — a call sheet -->
     <section class="brief reveal" id="brief">
-      <div class="sec-head"><p class="idx mono">07 / Start a project</p><h2>Send us the <em>brief.</em></h2></div>
+      <div class="sec-head"><p class="idx mono">08 / Start a project</p><h2>Send us the <em>brief.</em></h2><p class="sub">Your brief goes to our Brand Management team, who will reach out to set up your strategy session.</p></div>
       <form class="callsheet" id="briefForm" novalidate>
         <label><span class="mono">Brand / Client</span><input name="brand" required autocomplete="organization"></label>
         <label><span class="mono">Your name</span><input name="name" required autocomplete="name"></label>
@@ -141,7 +208,7 @@
           <label class="chip"><input type="radio" name="budget" value="50k+"><span>$50k+</span></label>
           <label class="chip"><input type="radio" name="budget" value="unsure"><span>Not sure yet</span></label>
         </fieldset>
-        <div class="wide send"><button class="btn" type="submit">Send the brief <span>→</span></button><p class="note mono" id="briefNote">Preview — the form connects to the studio inbox at launch.</p></div>
+        <div class="wide send"><button class="btn" type="submit">Send the brief <span>→</span></button><p class="note mono" id="briefNote">Preview — at launch the brief goes straight to Brand Management.</p></div>
       </form>
     </section>
   </main>

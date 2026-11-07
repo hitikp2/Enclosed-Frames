@@ -1,0 +1,11 @@
+{
+  // Cloudflare Workers Builds runs `npx wrangler deploy` with this config.
+  // Static-assets-only Worker: no script, files served straight from the repo root.
+  "name": "enclosed-frames",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./",
+    // Unknown paths get the default 404 (no SPA fallback to index.html).
+    "not_found_handling": "none"
+  }
+}

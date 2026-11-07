@@ -28,7 +28,7 @@
     e.preventDefault();
     var missing = ['brand', 'name', 'email'].filter(function (k) { return !form.elements[k].value.trim(); });
     note.textContent = missing.length ? 'Add your ' + missing.join(', ') + ' so we can reply.'
-      : 'Preview — not sent yet. The form connects to the studio inbox at launch.';
+      : 'Preview — not sent yet. At launch your brief goes to Brand Management, who set up your strategy session.';
   });
 
   // Footer wordmark: scale to fill the line exactly (no clipping at any width).

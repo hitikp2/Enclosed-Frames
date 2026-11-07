@@ -1,0 +1,18 @@
+# Files in the repo root that must NOT be published (gitignore syntax).
+# Wrangler config and this file
+wrangler.jsonc
+wrangler.json
+wrangler.toml
+.assetsignore
+
+# Dotfiles and dot-directories (.git, .wrangler, .DS_Store, ...)
+.*
+
+# Internal docs and tools
+CLAUDE.md
+README.md
+tools/
+Test
+
+# Local tooling, if ever added
+node_modules/
