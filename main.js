@@ -37,5 +37,24 @@
     if (wm.scrollWidth > 0) wm.style.fontSize = Math.floor(fs * wm.clientWidth / wm.scrollWidth * 0.99) + 'px'; }
   (document.fonts ? document.fonts.ready : Promise.resolve()).then(fit); addEventListener('resize', fit);
 
+  // Live 3D booth (EF—001) in the viewfinder: loaded after the page is up, turns slowly, drag to spin on desktop.
+  // Phones never lose the page scroll to it; reduced motion keeps it still. Falls back to the gradient if WebGL fails.
+  var media = document.querySelector('.vf-media'), label = document.getElementById('vfLabel');
+  var touch = matchMedia('(hover: none)').matches;
+  function load(src) { return new Promise(function (ok, no) { var s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = no; document.body.appendChild(s); }); }
+  function boot() {
+    load('js/vendor/three.min.js').then(function () { return Promise.all(['js/vendor/OrbitControls.js', 'js/vendor/RoomEnvironment.js', 'js/booth.js'].map(load)); })
+      .then(function () { return window.createBooth(media); })
+      .then(function (b) {
+        var c = b.controls; c.enableZoom = false; c.enablePan = false; c.autoRotate = !reduce; c.autoRotateSpeed = 0.55;
+        if (touch) { c.enabled = false; b.renderer.domElement.style.pointerEvents = 'none'; }
+        else b.renderer.domElement.style.cursor = 'grab';
+        media.classList.add('live'); if (label) label.textContent = 'EF—001 · THE ENCLOSED · LIVE 3D';
+      }).catch(function () { /* keep the gradient viewfinder */ });
+  }
+  if (media) addEventListener('load', function () {
+    if (window.requestIdleCallback) requestIdleCallback(boot, { timeout: 1500 }); else setTimeout(boot, 300);
+  });
+
   var yr = document.getElementById('yr'); if (yr) yr.textContent = new Date().getFullYear();
 })();

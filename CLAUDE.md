@@ -18,6 +18,13 @@ Static site: `index.html`, `styles.css`, `main.js`, `favicon.svg`. No framework,
 - Layout language: viewfinder hero, numbered index (Booths), contact sheet (Lab), film credits (Process), call
   sheet (brief form). Editorial grid, hairline rules, film grain.
 
+## 3D booth (EF—001 The Enclosed)
+`js/booth.js` is the owner's three.js r128 model of the booth (copied from their own files) with this studio's
+branding: the sign reads ENCLOSED FRAMES / enclosedframes.com, the sample strip says EF—001, and the print strips are
+plain (no client photo). `js/vendor/` holds three r128 + OrbitControls + RoomEnvironment, self-hosted. `main.js` loads
+it after page load into the hero viewfinder: slow auto-rotate, drag on desktop, never captures touch on phones, still
+with reduced motion, falls back to the gradient without WebGL. Never bring back other brands' text or client images.
+
 ## Content rules
 - Real footage and real projects only. Placeholder slots are labelled as such until replaced. No stock imagery.
 - Booth entries say their true status: Built / In development / Lab.

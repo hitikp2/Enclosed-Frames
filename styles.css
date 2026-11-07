@@ -33,7 +33,9 @@ nav .cta { border: 1px solid currentColor; padding: 8px 14px; border-radius: 999
 .hero { min-height: 100svh; display: grid; grid-template-rows: auto auto; align-content: space-between; padding: calc(72px + env(safe-area-inset-top)) var(--pad) var(--pad); gap: clamp(20px, 4vh, 40px); }
 .vf { position: relative; height: clamp(220px, 40vh, 520px); border-radius: 2px; overflow: hidden;
   background: radial-gradient(120% 90% at 70% 30%, #1d1d21 0%, #0f0f11 55%, #070708 100%); }
-.vf-media { position: absolute; inset: 0; }
+.vf-media { position: absolute; inset: 0; z-index: 1; }
+.vf-media canvas { position: relative; z-index: 1; display: block; opacity: 0; transition: opacity 1.2s ease; }
+.vf-media.live canvas { opacity: 1; }
 .vf-media::before { content: ''; position: absolute; inset: -20%; background:
   radial-gradient(40% 30% at 30% 60%, rgba(255,59,31,.18), transparent 70%), radial-gradient(35% 40% at 75% 35%, rgba(236,233,227,.10), transparent 70%);
   animation: drift 14s ease-in-out infinite alternate; }
