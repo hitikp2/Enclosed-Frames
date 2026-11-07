@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Enclosed Frames — Experimental Photo Booth Studio</title>
+  <meta name="description" content="Enclosed Frames is an experimental photo booth studio in Los Angeles. We invent, design and build photo booths that don't exist yet.">
+  <meta name="theme-color" content="#0B0B0C">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <a class="mark" href="#top" aria-label="Enclosed Frames home"><span class="br">⌜</span>Enclosed Frames<span class="br">⌟</span></a>
+    <nav aria-label="Primary">
+      <a href="#booths">Booths</a><a href="#lab">Lab</a><a href="#process">Process</a>
+      <a class="cta" href="#brief">Start a project</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- 01 · HERO — a live viewfinder. The reel drops into .vf-media when footage exists. -->
+    <section class="hero">
+      <div class="vf" aria-hidden="true">
+        <span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>
+        <div class="vf-media"></div>
+        <div class="hud hud-tl"><span class="rec"></span>REC <span class="mono" id="tc">00:00:00:00</span></div>
+        <div class="hud hud-tr mono">EF—001 · 4K · 120 FPS</div>
+        <div class="hud hud-bl mono">ISO 400 · 1/125 · ƒ2.8</div>
+        <div class="hud hud-br mono">REEL 2026 — FOOTAGE SLOT</div>
+        <div class="vf-cross"></div>
+      </div>
+      <div class="hero-copy">
+        <p class="kicker mono">Experimental photo booth studio — Los Angeles</p>
+        <h1>We build the photo booths that don’t exist <em>yet.</em></h1>
+        <div class="hero-foot">
+          <p>Enclosed Frames invents, designs and builds custom photo booths and capture experiences for brands that want their guests to make something worth sharing.</p>
+          <a class="btn" href="#brief">Start a project <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 · STATEMENT -->
+    <section class="statement reveal">
+      <p class="idx mono">02 / Statement</p>
+      <p class="big">A photo booth is a <em>small film set.</em> We treat it like one — light, lens, set, interface, print and the moment a guest steps inside.</p>
+      <ul class="facts mono">
+        <li><b>Built</b>In-house, Los Angeles</li>
+        <li><b>Formats</b>Stills · Slow motion · 360 · Print</li>
+        <li><b>For</b>Brands · Agencies · Artists</li>
+      </ul>
+    </section>
+
+    <!-- 03 · BOOTHS — an index, like a production slate. Replace placeholders with real projects + footage. -->
+    <section class="booths reveal" id="booths">
+      <div class="sec-head"><p class="idx mono">03 / Booths</p><h2>The <em>index.</em></h2></div>
+      <ol class="index">
+        <li><span class="n mono">001</span><span class="t">The Enclosed</span><span class="d">A vintage-inspired private booth. Walnut, aluminium, a curtain, a print chute.</span><span class="s mono">Built</span></li>
+        <li><span class="n mono">002</span><span class="t">Slow Room</span><span class="d">A booth that films one second and plays it back as ten.</span><span class="s mono">In development</span></li>
+        <li><span class="n mono">003</span><span class="t">Strip Theory</span><span class="d">New print formats beyond the 2×6 — cards, folds, stacks.</span><span class="s mono">Lab</span></li>
+        <li><span class="n mono">004</span><span class="t">Interface 01</span><span class="d">Custom touchscreen flows, built for one brand, one night.</span><span class="s mono">Lab</span></li>
+      </ol>
+    </section>
+
+    <!-- 04 · CAPABILITIES -->
+    <section class="caps reveal">
+      <div class="sec-head"><p class="idx mono">04 / Capabilities</p><h2>From sketch to <em>strip.</em></h2></div>
+      <div class="grid">
+        <article><p class="mono">A</p><h3>Custom builds</h3><p>New forms, enclosures, materials and full brand wraps — designed and fabricated for the room it lives in.</p></article>
+        <article><p class="mono">B</p><h3>Capture formats</h3><p>Slow motion, 360, multi-camera, stop-motion strips and editorial portrait set-ups.</p></article>
+        <article><p class="mono">C</p><h3>Interfaces</h3><p>On-screen flows, templates and data capture that look like your brand, not like software.</p></article>
+        <article><p class="mono">D</p><h3>Production</h3><p>Crew, staffing and the content afterwards — every frame delivered, edited and ready to post.</p></article>
+      </div>
+    </section>
+
+    <!-- 05 · LAB — a contact sheet. Each frame is a slot for a test still or clip. -->
+    <section class="lab reveal" id="lab">
+      <div class="sec-head"><p class="idx mono">05 / Lab</p><h2>Contact <em>sheet.</em></h2><p class="sub">Tests, prototypes and accidents worth keeping.</p></div>
+      <div class="sheet">
+        <div class="strip">
+          <figure class="f f1"><figcaption class="mono">01 · Long-exposure strip</figcaption></figure>
+          <figure class="f f2"><figcaption class="mono">02 · Mirror tunnel</figcaption></figure>
+          <figure class="f f3"><figcaption class="mono">03 · Light-leak print</figcaption></figure>
+          <figure class="f f4"><figcaption class="mono">04 · Split-second sequence</figcaption></figure>
+        </div>
+        <div class="strip">
+          <figure class="f f5"><figcaption class="mono">05 · Thermal receipt portrait</figcaption></figure>
+          <figure class="f f6"><figcaption class="mono">06 · Overhead rig</figcaption></figure>
+          <figure class="f f7"><figcaption class="mono">07 · Curtain study</figcaption></figure>
+          <figure class="f f8"><figcaption class="mono">08 · Double exposure</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 · PROCESS — film credits -->
+    <section class="process reveal" id="process">
+      <div class="sec-head"><p class="idx mono">06 / Process</p><h2>How a booth <em>gets made.</em></h2></div>
+      <ol class="credits">
+        <li><span class="mono">I</span><b>Concept</b><span>The idea, the room, the guest, the shareable moment.</span></li>
+        <li><span class="mono">II</span><b>Design</b><span>Form, light, lens, interface and print, on paper and in 3D.</span></li>
+        <li><span class="mono">III</span><b>Build</b><span>Fabricated and tested in our Los Angeles shop.</span></li>
+        <li><span class="mono">IV</span><b>Event</b><span>Delivered, staffed and run by the team that built it.</span></li>
+        <li><span class="mono">V</span><b>Content</b><span>Every frame back to you, edited and ready to post.</span></li>
+      </ol>
+    </section>
+
+    <!-- 07 · BRIEF — a call sheet -->
+    <section class="brief reveal" id="brief">
+      <div class="sec-head"><p class="idx mono">07 / Start a project</p><h2>Send us the <em>brief.</em></h2></div>
+      <form class="callsheet" id="briefForm" novalidate>
+        <label><span class="mono">Brand / Client</span><input name="brand" required autocomplete="organization"></label>
+        <label><span class="mono">Your name</span><input name="name" required autocomplete="name"></label>
+        <label><span class="mono">Email</span><input name="email" type="email" required autocomplete="email"></label>
+        <label><span class="mono">Event date &amp; city</span><input name="when" placeholder="e.g. March 2027, Los Angeles"></label>
+        <label class="wide"><span class="mono">The idea</span><textarea name="idea" rows="4" placeholder="What should guests do, feel and take home?"></textarea></label>
+        <fieldset class="wide"><legend class="mono">Budget range</legend>
+          <label class="chip"><input type="radio" name="budget" value="10-25k"><span>$10–25k</span></label>
+          <label class="chip"><input type="radio" name="budget" value="25-50k"><span>$25–50k</span></label>
+          <label class="chip"><input type="radio" name="budget" value="50k+"><span>$50k+</span></label>
+          <label class="chip"><input type="radio" name="budget" value="unsure"><span>Not sure yet</span></label>
+        </fieldset>
+        <div class="wide send"><button class="btn" type="submit">Send the brief <span>→</span></button><p class="note mono" id="briefNote">Preview — the form connects to the studio inbox at launch.</p></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p class="wordmark"><span class="br">⌜</span>Enclosed Frames<span class="br">⌟</span></p>
+    <div class="foot-row mono"><span>Experimental photo booth studio</span><span>Los Angeles</span><a href="mailto:studio@enclosedframes.com">studio@enclosedframes.com</a><span>© <span id="yr">2026</span></span></div>
+  </footer>
+  <script src="main.js" defer></script>
+</body>
+</html>
