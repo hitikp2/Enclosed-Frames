@@ -10,8 +10,10 @@ Static site: `index.html`, `styles.css`, `main.js`, `favicon.svg`. No framework,
 `python3 -m http.server` in this folder. The brief form is a preview until the studio inbox is connected.
 
 ## Identity
-- Colours: Ink `#0B0B0C`, Paper `#ECE9E3`, Aluminium `#8C9096`, Line `#26272A`, **Tally Red `#FF3B1F`**: the
-  camera's REC light, so use it sparingly (REC dot, CTAs, one italic word per headline).
+- Colours (Nov 2026): page **Red Orange `#F42902`**; **Snowy White `#FDFDFF`** for large type only (4.0:1 on red);
+  **Ink `#0B0B0C`** for body text, labels and small type (4.8:1); **Yellow Punk `#CCFF00`** accent: the one italic
+  headline word, buttons (yellow with ink text), REC dot, client-review markers. Never yellow or white for small text on
+  red. Dark "screen" panels (viewfinder, Lab contact sheet, renders, team cards) keep light-on-ink via local CSS vars.
 - Type: **Archivo** (wide `font-stretch` 110–125%, 800–900) for display. **Instrument Serif** italic for the one
   accent word. **IBM Plex Mono** uppercase for slate/timecode/metadata labels.
 - Device: viewfinder crop brackets ⌜ ⌟ (wordmark, hero corners).
